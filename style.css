@@ -1,3 +1,6 @@
+/* ============================================
+   RESET & BASE
+   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -45,6 +48,9 @@ a {
     padding: 0 24px;
 }
 
+/* ============================================
+   HEADER & NAV
+   ============================================ */
 header {
     background: rgba(0, 0, 0, 0.9);
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
@@ -108,6 +114,7 @@ nav ul li a:hover {
     position: relative;
 }
 
+/* Dropdown menu */
 .mega-menu {
     position: absolute;
     top: 120%;
@@ -121,7 +128,6 @@ nav ul li a:hover {
     display: none;
     flex-direction: column;
     gap: 6px;
-    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.42);
 }
 
 .nav-item:hover .mega-menu,
@@ -158,6 +164,9 @@ nav ul li a:hover {
     font-weight: 600;
 }
 
+/* ============================================
+   PAGE SECTIONS
+   ============================================ */
 .page-section {
     display: none;
     padding: 52px 24px;
@@ -169,22 +178,22 @@ nav ul li a:hover {
     display: block;
 }
 
-/* =========================================
-   NEW: Force Home page to fit without scroll
-   ========================================= */
-#home.active-section {
-    height: calc(100vh - 65px - 80px); /* Fills screen minus header and footer */
+/* Home page locks to viewport height (no scroll) */
+#ByteQuest-Home.active-section {
+    height: calc(100vh - 65px - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 24px; /* Keeps your side padding */
+    padding: 0 24px;
 }
 
-#home .hero-content h1 {
-    font-size: clamp(2.5rem, 6vh, 4rem); /* Shrinks text on short screens */
+#ByteQuest-Home .hero-content h1 {
+    font-size: clamp(2.5rem, 6vh, 4rem);
 }
-/* ========================================= */
 
+/* ============================================
+   HERO (HOME)
+   ============================================ */
 .hero {
     background: black;
 }
@@ -209,8 +218,29 @@ nav ul li a:hover {
     max-width: 500px;
 }
 
+/* Call-to-action button */
+.action-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 14px 36px;
+    background-color: #FFF000;
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.action-btn:hover {
+    background-color: #FFF000;
+    transform: translateY(-2px);
+}
+
 .hero-image {
-    background-image: url(/assets/Cat.gif);
+    background-image: url('assets/meow.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -219,10 +249,13 @@ nav ul li a:hover {
     border-radius: 24px;
 }
 
-#about h2,
-#activities h2,
-#exercise3 h2,
-#exercise4 h2 {
+/* ============================================
+   SECTION HEADINGS
+   ============================================ */
+#ByteQuest-AboutUs h2,
+#ByteQuest-Exercise2 h2,
+#ByteQuest-Exercise3 h2,
+#ByteQuest-Exercise4 h2 {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--accent);
@@ -234,7 +267,7 @@ nav ul li a:hover {
     margin-right: auto;
 }
 
-#about p {
+#ByteQuest-AboutUs p {
     color: #ffffffd8;
     font-size: 1.2rem;
     line-height: 1.7;
@@ -243,6 +276,9 @@ nav ul li a:hover {
     padding-left: 28px;
 }
 
+/* ============================================
+   ACTIVITY CARDS
+   ============================================ */
 .activity-card {
     background: var(--panel);
     border: 1px solid var(--stroke);
@@ -252,13 +288,10 @@ nav ul li a:hover {
     max-width: 750px;
     margin: 0 auto 2rem auto;
     color: var(--text);
-    box-shadow: 0 15px 30px -10px #000000cc;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .activity-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 18px 34px -12px #000000d9;
 }
 
 .activity-card h3 {
@@ -274,6 +307,9 @@ nav ul li a:hover {
     margin-bottom: 1.5rem;
 }
 
+/* ============================================
+   BUTTONS & INPUTS
+   ============================================ */
 .run-btn {
     background: #0b1220;
     border: 1px solid var(--stroke);
@@ -284,7 +320,6 @@ nav ul li a:hover {
     border-radius: 12px;
     cursor: pointer;
     transition: transform 0.15s, background-color 0.15s, border-color 0.15s;
-    box-shadow: none;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -303,13 +338,11 @@ input {
     background: #020617;
     color: white;
     width: 100%;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 input:focus {
     outline: none;
     border-color: #48658b;
-    box-shadow: 0 0 0 3px rgba(72, 101, 139, 0.25);
 }
 
 .input-group {
@@ -333,6 +366,9 @@ input:focus {
     color: var(--muted);
 }
 
+/* ============================================
+   GRADE CALCULATOR
+   ============================================ */
 .grade-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -345,7 +381,6 @@ input:focus {
     border: 1px solid var(--stroke);
     border-radius: 20px;
     padding: 1rem;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .grade-column h4 {
@@ -411,6 +446,9 @@ input:focus {
     min-width: 160px;
 }
 
+/* ============================================
+   FOOTER
+   ============================================ */
 footer {
     background: black;
     border-top: 1px solid #2d3748;
@@ -420,6 +458,129 @@ footer {
     margin-top: auto;
 }
 
+/* ============================================
+   LIGHT MODE
+   ============================================ */
+body.light-mode {
+    background-color: #f5f7fa;
+    color: #111827;
+}
+
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom-color: rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .logo h1 {
+    background: #b8860b;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+body.light-mode nav ul li a {
+    color: #111827;
+}
+
+body.light-mode .page-section,
+body.light-mode .hero {
+    background: #f5f7fa;
+}
+
+body.light-mode .hero-content h1,
+body.light-mode .hero-content p {
+    color: #111827;
+}
+
+body.light-mode .mega-menu {
+    background: #ffffff;
+    border-color: #d1d5db;
+}
+
+body.light-mode .menu-column {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+body.light-mode .menu-column:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+}
+
+body.light-mode .menu-column h3 {
+    color: #111827;
+}
+
+body.light-mode #ByteQuest-AboutUs h2,
+body.light-mode #ByteQuest-Exercise2 h2,
+body.light-mode #ByteQuest-Exercise3 h2,
+body.light-mode #ByteQuest-Exercise4 h2 {
+    color: #b8860b;
+    border-left-color: #b8860b;
+}
+
+body.light-mode #ByteQuest-AboutUs p,
+body.light-mode .activity-card p {
+    color: #374151;
+}
+
+body.light-mode .activity-card {
+    background: #ffffff;
+    border-color: #d1d5db;
+    color: #111827;
+}
+
+body.light-mode .activity-card h3 {
+    color: #b8860b;
+}
+
+body.light-mode .run-btn {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+    color: #111827;
+}
+
+body.light-mode .run-btn:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+}
+
+body.light-mode input {
+    background: #ffffff;
+    color: #111827;
+    border-color: #d1d5db;
+}
+
+body.light-mode input:focus {
+    border-color: #6b7280;
+}
+
+body.light-mode .grade-column {
+    background: #ffffff;
+    border-color: #d1d5db;
+}
+
+body.light-mode #finalGradeOutput,
+body.light-mode #gradeEquivalentOutput {
+    background: #f9fafb;
+    color: #111827;
+    border-color: #d1d5db;
+}
+
+body.light-mode #itemList,
+body.light-mode #todoList {
+    color: #374151;
+}
+
+body.light-mode footer {
+    background: #ffffff;
+    border-top-color: #d1d5db;
+    color: #111827;
+}
+
+/* ============================================
+   RESPONSIVE (MOBILE)
+   ============================================ */
 @media (max-width: 768px) {
 
     header {
@@ -462,10 +623,10 @@ footer {
         font-size: 1.5rem;
     }
 
-    #about h2,
-    #activities h2,
-    #exercise3 h2,
-    #exercise4 h2 {
+    #ByteQuest-AboutUs h2,
+    #ByteQuest-Exercise2 h2,
+    #ByteQuest-Exercise3 h2,
+    #ByteQuest-Exercise4 h2 {
         font-size: 2rem;
     }
 

@@ -1,5 +1,8 @@
+/* ============================================
+   ROUTING
+   ============================================ */
 function showSection(sectionId) {
-    const targetId = sectionId || 'home';
+    const targetId = sectionId || 'ByteQuest-Home';
     document.querySelectorAll('.page-section').forEach((section) => {
         section.classList.toggle('active-section', section.id === targetId);
     });
@@ -7,7 +10,7 @@ function showSection(sectionId) {
 
 function handleRoute() {
     const hash = window.location.hash.replace('#', '');
-    showSection(hash || 'home');
+    showSection(hash || 'ByteQuest-Home');
 }
 
 window.addEventListener('hashchange', handleRoute);
@@ -15,7 +18,10 @@ window.addEventListener('hashchange', handleRoute);
 document.addEventListener('DOMContentLoaded', () => {
     handleRoute();
 
-    /* Exercise 2 */
+    /* ============================================
+       EXERCISE 2 — Basic JavaScript
+       ============================================ */
+
     document.getElementById('runAct1')?.addEventListener('click', () => {
         console.log('Welcome to ByteQuest! This is your first JavaScript output.');
         alert('Welcome to ByteQuest! Check the browser console (F12).');
@@ -71,7 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Button click logged to the console.');
     });
 
-    /* Exercise 3 */
+    /* ============================================
+       EXERCISE 3 — DOM Manipulation
+       ============================================ */
+
     document.getElementById('colorBtn')?.addEventListener('click', () => {
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
@@ -86,21 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('darkModeBtn')?.addEventListener('click', () => {
-        const isLight = document.body.classList.toggle('light-mode');
-
-        if (isLight) {
-            document.body.style.backgroundColor = '';
-            document.querySelectorAll('.page-section, .hero').forEach((el) => {
-                el.style.backgroundColor = '';
-            });
-        } else {
-            document.body.style.backgroundColor = '#0f172a';
-            document.querySelectorAll('.page-section').forEach((el) => {
-                el.style.backgroundColor = 'black';
-            });
-            const hero = document.querySelector('.hero');
-            if (hero) hero.style.backgroundColor = 'black';
-        }
+        document.body.classList.toggle('light-mode');
     });
 
     document.getElementById('addItemBtn')?.addEventListener('click', () => {
@@ -161,7 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
         input.value = '';
     });
 
-    /* Exercise 4 — Grade Calculator */
+    /* ============================================
+       EXERCISE 4 — Grade Calculator
+       ============================================ */
+
     const quizContainer = document.getElementById('quizContainer');
     const examContainer = document.getElementById('examContainer');
     const mcoContainer = document.getElementById('mcoContainer');
@@ -172,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const calcGradeBtn = document.getElementById('calcGradeBtn');
     const resetGradeBtn = document.getElementById('resetGradeBtn');
 
+    // Builds score/total input rows for a category
     function generateRows(container, count, label, scoreClass, totalClass) {
         if (!container) return;
         container.innerHTML = '';
@@ -196,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Returns the average for a category, or null if inputs are invalid
     function readCategory(scores, totals, label) {
         if (scores.length === 0) {
             alert(`Generate at least one ${label} item first.`);
