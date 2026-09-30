@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ByteQuest</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+
+    <link rel="icon" type="image/png" href="/assets/logoBG.png">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+
+            <img src="/assets/logoBG.png" alt="ByteQuest Logo">
+
+            <h1>ByteQuest</h1>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+
+                    <a href="#activities">Activities</a>
+
+                    <div class="mega-menu">
+
+                        <div class="menu-column">
+                            <a href="#activities">
+                                <h3>Exercise 2</h3>
+                            </a>
+                        </div>
+
+                        <div class="menu-column">
+                            <a href="#exercise3">
+                                <h3>Exercise 3</h3>
+                            </a>
+                        </div>
+
+                        <div class="menu-column">
+                            <a href="#exercise4">
+                                <h3>Exercise 4</h3>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+        <section id="home" class="page-section active-section">
+
+            <div class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <h1>Welcome to ByteQuest!</h1>
+
+                            <p>
+                                Ready for your Adventure in Web Development?
+                            </p>
+
+                        </div>
+
+                        <div class="hero-image"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="about" class="page-section">
+
+            <h2>About Us</h2>
+
+            <p>This project is made by Katina Lorraine Rosialda, BSCS 2C student, as a major course requirement for ITE6.</p>
+
+        </section>
+
+        <section id="activities" class="page-section">
+
+            <h2>Exercise 2</h2>
+
+            <div class="activity-card">
+
+                <h3>Activity 1</h3>
+
+                <p>
+                    Show a welcome message and log your first JavaScript output.
+                </p>
+
+                <button id="runAct1" class="run-btn">
+                    Run Activity 1
+                </button>
+
+            </div>
+
+            <div class="activity-card">
+
+                <h3>Activity 2</h3>
+
+                <p>
+                    Practice variables: store your name, age, and student status.
+                </p>
+
+                <button id="runAct2" class="run-btn">
+                    Run Activity 2
+                </button>
+
+            </div>
+
+            <div class="activity-card">
+
+                <h3>Activity 3</h3>
+
+                <p>
+                    Do basic arithmetic with two numbers and log the results.
+                </p>
+
+                <button id="runAct3" class="run-btn">
+                    Run Activity 3
+                </button>
+
+            </div>
+
+            <div class="activity-card">
+
+                <h3>Activity 4</h3>
+
+                <p>
+                    Use prompts to get the user's name and favorite number.
+                </p>
+
+                <button id="runAct4" class="run-btn">
+                    Run Activity 4
+                </button>
+
+            </div>
+
+            <div class="activity-card">
+
+                <h3>Activity 5</h3>
+
+                <p>
+                    Use an if/else statement to check if the user is eligible by age.
+                </p>
+
+                <button id="runAct5" class="run-btn">
+                    Run Activity 5
+                </button>
+
+            </div>
+
+            <div class="activity-card">
+
+                <h3>Activity 6</h3>
+
+                <p>
+                    Loop practice: count up with a for loop and down with a while loop.
+                </p>
+
+                <button id="runAct6" class="run-btn">
+                    Run Activity 6
+                </button>
+
+            </div>
+
+            <div class="activity-card">
+
+                <h3>Activity 7</h3>
+
+                <p>
+                    Respond to a button click and log the interaction.
+                </p>
+
+                <button id="runAct7" class="run-btn">
+                    Run Activity 7
+                </button>
+
+            </div>
+
+        </section>
+
+        <section id="exercise3" class="page-section">
+            <h2>Exercise 3</h2>
+
+            <div class="activity-card">
+                <h3>Activity 1: Change Background Color</h3>
+                <p>Click the button to change the page background to a random color.</p>
+                <button id="colorBtn" class="run-btn">Change Color</button>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 2: Dark Mode Toggle</h3>
+                <p>Toggle between dark mode and light mode for the page.</p>
+                <button id="darkModeBtn" class="run-btn">Toggle Dark Mode</button>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 3: Add List Items</h3>
+                <p>Add new items to the list each time you click the button.</p>
+                <button id="addItemBtn" class="run-btn">Add Item</button>
+                <ul id="itemList"></ul>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 4: Remove Paragraph</h3>
+                <p id="removeParagraph">This paragraph will be removed when you click the button.</p>
+                <button id="removeBtn" class="run-btn">Remove Paragraph</button>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 5: Character Count</h3>
+                <p>Type in the box and see how many characters you have entered.</p>
+                <input id="charInput" type="text" placeholder="Start typing...">
+                <p id="charCount">Characters: 0</p>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 6: Addition Calculator</h3>
+                <p>Enter two numbers and calculate their sum.</p>
+                <div class="input-group">
+                    <input id="num1" type="number" placeholder="First number">
+                    <input id="num2" type="number" placeholder="Second number">
+                </div>
+                <button id="calculateBtn" class="run-btn">Calculate</button>
+                <p id="result">Result: 0</p>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 7: Change Image</h3>
+                <p>Click the button to change the image.</p>
+                <img id="dynamicImage" src="like.png" alt="Like image">
+                <button id="changeImageBtn" class="run-btn">Toggle Like / Dislike</button>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 8: Mini To-Do List</h3>
+                <p>Add items to your mini to-do list and delete them when done.</p>
+                <div class="input-group">
+                    <input id="todoInput" type="text" placeholder="New todo...">
+                    <button id="addTodoBtn" class="run-btn">Add Todo</button>
+                </div>
+                <ul id="todoList"></ul>
+            </div>
+        </section>
+
+        <section id="exercise4" class="page-section">
+            <h2>Exercise 4</h2>
+
+            <div class="activity-card">
+                <h3>Student Grade Calculator</h3>
+                <p>Enter scores and totals. You may generate any number of Quiz, Exam, and MCO items.</p>
+
+                <div class="grade-layout">
+                    <div class="grade-column">
+                        <h4>Quiz</h4>
+                        <input id="quizCount" type="number" placeholder="Number of quizzes">
+                        <button id="generateQuizBtn" class="run-btn">Generate</button>
+                        <div id="quizContainer"></div>
+                    </div>
+
+                    <div class="grade-column">
+                        <h4>Exam</h4>
+                        <input id="examCount" type="number" placeholder="Number of exams">
+                        <button id="generateExamBtn" class="run-btn">Generate</button>
+                        <div id="examContainer"></div>
+                    </div>
+
+                    <div class="grade-column">
+                        <h4>MCO</h4>
+                        <input id="mcoCount" type="number" placeholder="Number of MCO">
+                        <button id="generateMcoBtn" class="run-btn">Generate</button>
+                        <div id="mcoContainer"></div>
+                    </div>
+                </div>
+
+                <div class="grade-buttons">
+                    <button id="calcGradeBtn" class="run-btn">Calculate Grade</button>
+                    <button id="resetGradeBtn" class="run-btn">Reset</button>
+                </div>
+
+                <div class="grade-results">
+                    <p id="finalGradeOutput">Final Grade :</p>
+                    <p id="gradeEquivalentOutput">Grade Equivalent :</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            &copy; 2026 ByteQuest. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

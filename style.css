@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0f172a;
+    --panel: #111c2b;
+    --panel-2: #162235;
+    --stroke: #2c3f58;
+    --text: #ffffff;
+    --muted: #cfdeed;
+    --accent: #ffd900;
+    --accent-strong: #a58300;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.logo h1 {
+    font-size: 30px;
+    font-weight: 700;
+    background: #ffd966;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--text);
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.nav-item {
+    position: relative;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    width: max-content;
+    max-width: 90vw;
+    background: #0b1220;
+    border: 1px solid var(--stroke);
+    border-radius: 16px;
+    padding: 8px;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.42);
+}
+
+.nav-item:hover .mega-menu,
+.mega-menu:hover {
+    display: flex;
+    align-items: flex-start;
+}
+
+.menu-column {
+    background: #13233a;
+    border-radius: 12px;
+    padding: 8px 12px;
+    width: fit-content;
+    border: 1px solid #233a57;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.menu-column a {
+    display: block;
+}
+
+.menu-column:hover {
+    background: #1a2e49;
+    border-color: #355a84;
+    transform: translateY(-2px);
+}
+
+.menu-column h3 {
+    color: #e8f0ff;
+    font-size: 1rem;
+    margin: 0;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.page-section {
+    display: none;
+    padding: 52px 24px;
+    background: black;
+    flex: 1;
+}
+
+.page-section.active-section {
+    display: block;
+}
+
+/* =========================================
+   NEW: Force Home page to fit without scroll
+   ========================================= */
+#home.active-section {
+    height: calc(100vh - 65px - 80px); /* Fills screen minus header and footer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px; /* Keeps your side padding */
+}
+
+#home .hero-content h1 {
+    font-size: clamp(2.5rem, 6vh, 4rem); /* Shrinks text on short screens */
+}
+/* ========================================= */
+
+.hero {
+    background: black;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-content h1 {
+    color: var(--text);
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.hero-content p {
+    color: #ffffffc9;
+    font-size: 1.4rem;
+    max-width: 500px;
+}
+
+.hero-image {
+    background-image: url(/assets/Cat.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    min-height: 400px;
+    border-radius: 24px;
+}
+
+#about h2,
+#activities h2,
+#exercise3 h2,
+#exercise4 h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about p {
+    color: #ffffffd8;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 1200px;
+    margin: auto;
+    padding-left: 28px;
+}
+
+.activity-card {
+    background: var(--panel);
+    border: 1px solid var(--stroke);
+    border-radius: 32px;
+    padding: 2rem 2.5rem;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 2rem auto;
+    color: var(--text);
+    box-shadow: 0 15px 30px -10px #000000cc;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px -12px #000000d9;
+}
+
+.activity-card h3 {
+    color: #ffd966;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.activity-card p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+.run-btn {
+    background: #0b1220;
+    border: 1px solid var(--stroke);
+    color: #e8f0ff;
+    font-weight: 650;
+    font-size: 1.05rem;
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.15s, background-color 0.15s, border-color 0.15s;
+    box-shadow: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.run-btn:hover {
+    background: #0f1a2c;
+    border-color: #3a5272;
+    transform: translateY(-1px);
+}
+
+input {
+    padding: 0.7rem 0.9rem;
+    border-radius: 10px;
+    border: 1px solid var(--stroke);
+    background: #020617;
+    color: white;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #48658b;
+    box-shadow: 0 0 0 3px rgba(72, 101, 139, 0.25);
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+#dynamicImage {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+#itemList,
+#todoList {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    color: var(--muted);
+}
+
+.grade-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.grade-column {
+    background: var(--panel-2);
+    border: 1px solid var(--stroke);
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.grade-column h4 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.grade-column > input {
+    margin-bottom: 0.65rem;
+}
+
+.grade-column > .run-btn {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+.grade-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0.6rem;
+}
+
+.grade-row input {
+    width: 50%;
+}
+
+.grade-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+#calcGradeBtn {
+    background: var(--accent);
+    color: #111827;
+    border: none;
+    font-weight: 800;
+}
+
+#calcGradeBtn:hover {
+    background: #ffe65aac;
+    transform: translateY(-1px);
+}
+
+.grade-results {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#finalGradeOutput,
+#gradeEquivalentOutput {
+    color: #e8f0ff;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(180deg, #0f1a2d 0%, #0b1220 100%);
+    border: 1px solid var(--stroke);
+    border-radius: 10px;
+    padding: 0.55rem 0.9rem;
+    min-width: 160px;
+}
+
+footer {
+    background: black;
+    border-top: 1px solid #2d3748;
+    padding: 28px 24px;
+    text-align: center;
+    color: #f3f8fff1;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        margin: auto;
+    }
+
+    .hero-image {
+        min-height: 250px;
+    }
+
+    .activity-card {
+        padding: 1.5rem;
+    }
+
+    .activity-card h3 {
+        font-size: 1.5rem;
+    }
+
+    #about h2,
+    #activities h2,
+    #exercise3 h2,
+    #exercise4 h2 {
+        font-size: 2rem;
+    }
+
+}
